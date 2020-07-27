@@ -1,0 +1,1152 @@
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /home/muhammed/.rvm/rubies/ruby-2.7.1/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (140.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /home/muhammed/.rvm/rubies/ruby-2.7.1/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (164.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/muhammed/.rvm/rubies/ruby-2.7.1/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/muhammed/.rvm/rubies/ruby-2.7.1/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+Migrating to CreateVehicles (20200727184841)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/muhammed/.rvm/rubies/ruby-2.7.1/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "vehicles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "colour" varchar, "price" integer, "make" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200727184841_create_vehicles.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200727184841"]]
+  ↳ /home/muhammed/.rvm/rubies/ruby-2.7.1/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (595.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/muhammed/.rvm/rubies/ruby-2.7.1/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/muhammed/.rvm/rubies/ruby-2.7.1/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/muhammed/.rvm/rubies/ruby-2.7.1/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-07-27 18:49:54.729032"], ["updated_at", "2020-07-27 18:49:54.729032"]]
+  ↳ /home/muhammed/.rvm/rubies/ruby-2.7.1/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (955.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/muhammed/.rvm/rubies/ruby-2.7.1/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/muhammed/.rvm/rubies/ruby-2.7.1/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+Started GET "/" for ::1 at 2020-07-28 00:20:37 +0530
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/muhammed/.rvm/gems/ruby-2.7.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/muhammed/.rvm/gems/ruby-2.7.1/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/muhammed/.rvm/gems/ruby-2.7.1/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb (29.9ms)
+Completed 200 OK in 99ms (Views: 80.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vehicles" for ::1 at 2020-07-28 00:20:42 +0530
+Processing by VehiclesController#index as HTML
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.4ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 3076ms (Views: 3056.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/vehicles/new" for ::1 at 2020-07-28 00:20:55 +0530
+Processing by VehiclesController#new as HTML
+  Rendering vehicles/new.html.erb within layouts/application
+  Rendered vehicles/_form.html.erb (728.6ms)
+  Rendered vehicles/new.html.erb within layouts/application (736.6ms)
+Completed 200 OK in 841ms (Views: 818.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/vehicles" for ::1 at 2020-07-28 00:21:10 +0530
+Processing by VehiclesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pQZCbXiDBILMgsxBQ8s1YffQNaRDQmk5LHh0N2812WZLEy5gk/V4KE5Zli0E8YbGlViDAs6Pam55uuO8p+Wetg==", "vehicle"=>{"name"=>"Alto", "colour"=>"Black", "price"=>"20000", "make"=>"1998"}, "commit"=>"Create Vehicle"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/vehicles_controller.rb:30
+  [1m[36mVehicle Create (1.0ms)[0m  [1m[32mINSERT INTO "vehicles" ("name", "colour", "price", "make", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Alto"], ["colour", "Black"], ["price", 20000], ["make", "1998"], ["created_at", "2020-07-27 18:51:10.607124"], ["updated_at", "2020-07-27 18:51:10.607124"]]
+  ↳ app/controllers/vehicles_controller.rb:30
+  [1m[35m (964.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/vehicles_controller.rb:30
+Redirected to http://localhost:3000/vehicles/1
+Completed 302 Found in 979ms (ActiveRecord: 965.6ms)
+
+
+Started GET "/vehicles/1" for ::1 at 2020-07-28 00:21:11 +0530
+Processing by VehiclesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVehicle Load (0.5ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" WHERE "vehicles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/vehicles_controller.rb:67
+  Rendering vehicles/show.html.erb within layouts/application
+  Rendered vehicles/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 90ms (Views: 58.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/vehicles" for ::1 at 2020-07-28 00:21:14 +0530
+Processing by VehiclesController#index as HTML
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 59ms (Views: 56.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/vehicles" for ::1 at 2020-07-28 00:31:09 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/muhammed/.rvm/gems/ruby-2.7.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by VehiclesController#index as HTML
+Completed 400 Bad Request in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: vehicle):
+  
+app/controllers/vehicles_controller.rb:72:in `vehicle_params'
+app/controllers/vehicles_controller.rb:7:in `index'
+Started GET "/vehicles" for ::1 at 2020-07-28 00:33:05 +0530
+Processing by VehiclesController#index as HTML
+  [1m[36mVehicle Load (0.6ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/muhammed/.rvm/gems/ruby-2.7.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Vehicle Load (0.0ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/muhammed/.rvm/gems/ruby-2.7.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 0.0ms)
+
+
+  
+  [1m[36mCACHE Vehicle Load (0.0ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/muhammed/.rvm/gems/ruby-2.7.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+NameError (undefined local variable or method `scoped' for #<VehicleQuery:0x00007fdf181bc6d8>):
+  
+app/queries/vehicle_query.rb:15:in `call'
+app/controllers/vehicles_controller.rb:7:in `index'
+Started GET "/vehicles" for ::1 at 2020-07-28 00:33:39 +0530
+Processing by VehiclesController#index as HTML
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 299ms (Views: 291.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/vehicles/new" for ::1 at 2020-07-28 00:33:42 +0530
+Processing by VehiclesController#new as HTML
+  Rendering vehicles/new.html.erb within layouts/application
+  Rendered vehicles/_form.html.erb (20.5ms)
+  Rendered vehicles/new.html.erb within layouts/application (23.1ms)
+Completed 200 OK in 85ms (Views: 82.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/vehicles" for ::1 at 2020-07-28 00:33:59 +0530
+Processing by VehiclesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5Y0XJyZ0OAS8RvRdBRylvnGQyncxy+RDs0l++xvQ/i4LmHsqzQJErj6drjFCJhYZExh80bwG5xTmi+lw0wC5/g==", "vehicle"=>{"name"=>"Innova", "colour"=>"Black", "price"=>"200000", "make"=>"2010"}, "commit"=>"Create Vehicle"}
+Unpermitted parameters: :utf8, :authenticity_token, :vehicle, :commit
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/vehicles_controller.rb:30
+  [1m[36mVehicle Create (1.0ms)[0m  [1m[32mINSERT INTO "vehicles" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-07-27 19:03:59.766252"], ["updated_at", "2020-07-27 19:03:59.766252"]]
+  ↳ app/controllers/vehicles_controller.rb:30
+  [1m[35m (148.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/vehicles_controller.rb:30
+Redirected to http://localhost:3000/vehicles/2
+Completed 302 Found in 165ms (ActiveRecord: 150.1ms)
+
+
+Started GET "/vehicles/2" for ::1 at 2020-07-28 00:33:59 +0530
+Processing by VehiclesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mVehicle Load (0.6ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" WHERE "vehicles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/vehicles_controller.rb:67
+  Rendering vehicles/show.html.erb within layouts/application
+  Rendered vehicles/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 68ms (Views: 60.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/vehicles" for ::1 at 2020-07-28 00:34:02 +0530
+Processing by VehiclesController#index as HTML
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 65ms (Views: 62.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/vehicles" for ::1 at 2020-07-28 00:34:04 +0530
+Processing by VehiclesController#index as HTML
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 69ms (Views: 66.2ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/vehicles/2" for ::1 at 2020-07-28 00:38:15 +0530
+Processing by VehiclesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"uq00bYpMATB1OZOFmklmQI8RnCTjOo6J3gDV57JRoTA+NM6IvnNyQVlDq7Rx0eeI7ZASFpKl9dxhdDiUAA/aOw==", "id"=>"2"}
+  [1m[36mVehicle Load (0.4ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" WHERE "vehicles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/vehicles_controller.rb:67
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/vehicles_controller.rb:57
+  [1m[36mVehicle Destroy (0.6ms)[0m  [1m[31mDELETE FROM "vehicles" WHERE "vehicles"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/vehicles_controller.rb:57
+  [1m[35m (73.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/vehicles_controller.rb:57
+Redirected to http://localhost:3000/vehicles
+Completed 302 Found in 118ms (ActiveRecord: 76.9ms)
+
+
+Started GET "/vehicles" for ::1 at 2020-07-28 00:38:15 +0530
+Processing by VehiclesController#index as HTML
+Completed 400 Bad Request in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: vehicle):
+  
+app/controllers/vehicles_controller.rb:75:in `vehicle_params'
+app/controllers/vehicles_controller.rb:7:in `index'
+Started GET "/vehicles" for ::1 at 2020-07-28 00:38:22 +0530
+Processing by VehiclesController#index as HTML
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: vehicle):
+  
+app/controllers/vehicles_controller.rb:75:in `vehicle_params'
+app/controllers/vehicles_controller.rb:7:in `index'
+Started GET "/vehicles" for ::1 at 2020-07-28 00:38:25 +0530
+Processing by VehiclesController#index as HTML
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: vehicle):
+  
+app/controllers/vehicles_controller.rb:75:in `vehicle_params'
+app/controllers/vehicles_controller.rb:7:in `index'
+  [1m[36mVehicle Destroy (75.9ms)[0m  [1m[31mDELETE FROM "vehicles"[0m
+Started GET "/vehicles" for ::1 at 2020-07-28 00:38:49 +0530
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/muhammed/.rvm/gems/ruby-2.7.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by VehiclesController#index as HTML
+Completed 400 Bad Request in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: vehicle):
+  
+app/controllers/vehicles_controller.rb:75:in `vehicle_params'
+app/controllers/vehicles_controller.rb:7:in `index'
+Started GET "/" for ::1 at 2020-07-28 00:39:03 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/muhammed/.rvm/gems/ruby-2.7.1/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/muhammed/.rvm/gems/ruby-2.7.1/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb (5.3ms)
+Completed 200 OK in 12ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-07-28 00:39:06 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/muhammed/.rvm/gems/ruby-2.7.1/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/muhammed/.rvm/gems/ruby-2.7.1/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb (6.2ms)
+Completed 200 OK in 12ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vehicles" for ::1 at 2020-07-28 00:39:10 +0530
+Processing by VehiclesController#index as HTML
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: vehicle):
+  
+app/controllers/vehicles_controller.rb:75:in `vehicle_params'
+app/controllers/vehicles_controller.rb:7:in `index'
+Started GET "/vehicles" for ::1 at 2020-07-28 00:39:37 +0530
+Processing by VehiclesController#index as HTML
+Started GET "/vehicles" for ::1 at 2020-07-28 00:40:22 +0530
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/muhammed/.rvm/gems/ruby-2.7.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by VehiclesController#index as HTML
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.5ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (9.3ms)
+Started GET "/vehicles" for ::1 at 2020-07-28 00:40:29 +0530
+Processing by VehiclesController#index as HTML
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.4ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 8866ms (Views: 2123.2ms | ActiveRecord: 1.3ms)
+
+
+Completed 200 OK in 1846ms (Views: 256.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/vehicles/new" for ::1 at 2020-07-28 00:40:36 +0530
+Processing by VehiclesController#new as HTML
+  Rendering vehicles/new.html.erb within layouts/application
+  Rendered vehicles/_form.html.erb (17.8ms)
+  Rendered vehicles/new.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 83ms (Views: 54.9ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/vehicles" for ::1 at 2020-07-28 00:40:47 +0530
+Processing by VehiclesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pSLke+ET6d5jr1hnPr2dCNM0Aa2hDWrSdOrfyri9+zJLN4h2CmWVdOF0Agt5hy6vsby3CyzAaYUhKEhBcG284g==", "vehicle"=>{"name"=>"Alto", "colour"=>"Red", "price"=>"20000", "make"=>"2010"}, "commit"=>"Create Vehicle"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/vehicles_controller.rb:30
+  [1m[36mVehicle Create (0.9ms)[0m  [1m[32mINSERT INTO "vehicles" ("name", "colour", "price", "make", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Alto"], ["colour", "Red"], ["price", 20000], ["make", "2010"], ["created_at", "2020-07-27 19:10:47.962716"], ["updated_at", "2020-07-27 19:10:47.962716"]]
+  ↳ app/controllers/vehicles_controller.rb:30
+  [1m[35m (1723.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/vehicles_controller.rb:30
+Redirected to http://localhost:3000/vehicles/3
+Completed 302 Found in 1739ms (ActiveRecord: 1724.4ms)
+
+
+Started GET "/vehicles/3" for ::1 at 2020-07-28 00:40:49 +0530
+Processing by VehiclesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mVehicle Load (0.6ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" WHERE "vehicles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/vehicles_controller.rb:67
+  Rendering vehicles/show.html.erb within layouts/application
+  Rendered vehicles/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 86ms (Views: 59.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/vehicles" for ::1 at 2020-07-28 00:40:52 +0530
+Processing by VehiclesController#index as HTML
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.5ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 71ms (Views: 64.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/vehicles/new" for ::1 at 2020-07-28 00:40:53 +0530
+Processing by VehiclesController#new as HTML
+  Rendering vehicles/new.html.erb within layouts/application
+  Rendered vehicles/_form.html.erb (7.8ms)
+  Rendered vehicles/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 69ms (Views: 66.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/vehicles" for ::1 at 2020-07-28 00:41:08 +0530
+Processing by VehiclesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RPgB775IL7kZQmMU9iekbbJHz3h0EBZoL62RseOwQ6Oq7W3iVT5TE5uZOXixHRfK0M953vndFT96bwY6K2AEcw==", "vehicle"=>{"name"=>"Innova", "colour"=>"Blue", "price"=>"100000", "make"=>"2005"}, "commit"=>"Create Vehicle"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/vehicles_controller.rb:30
+  [1m[36mVehicle Create (0.8ms)[0m  [1m[32mINSERT INTO "vehicles" ("name", "colour", "price", "make", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Innova"], ["colour", "Blue"], ["price", 100000], ["make", "2005"], ["created_at", "2020-07-27 19:11:08.316820"], ["updated_at", "2020-07-27 19:11:08.316820"]]
+  ↳ app/controllers/vehicles_controller.rb:30
+  [1m[35m (164.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/vehicles_controller.rb:30
+Redirected to http://localhost:3000/vehicles/4
+Completed 302 Found in 179ms (ActiveRecord: 165.2ms)
+
+
+Started GET "/vehicles/4" for ::1 at 2020-07-28 00:41:08 +0530
+Processing by VehiclesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" WHERE "vehicles"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/vehicles_controller.rb:67
+  Rendering vehicles/show.html.erb within layouts/application
+  Rendered vehicles/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 62ms (Views: 58.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/vehicles" for ::1 at 2020-07-28 00:41:10 +0530
+Processing by VehiclesController#index as HTML
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 67ms (Views: 64.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/vehicles/new" for ::1 at 2020-07-28 00:41:12 +0530
+Processing by VehiclesController#new as HTML
+  Rendering vehicles/new.html.erb within layouts/application
+  Rendered vehicles/_form.html.erb (7.6ms)
+  Rendered vehicles/new.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 92ms (Views: 88.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/vehicles" for ::1 at 2020-07-28 00:41:27 +0530
+Processing by VehiclesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"whavWgfkXEbfNaxQKLDRJitdxRl4wm1m+StMmpvnH7MsA8NX7JIg7F3u9jxvimKBSdVzv/UPbjGs6dsRUzdYYw==", "vehicle"=>{"name"=>"WagonR", "colour"=>"Blue", "price"=>"500000", "make"=>"2018"}, "commit"=>"Create Vehicle"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/vehicles_controller.rb:30
+  [1m[36mVehicle Create (0.7ms)[0m  [1m[32mINSERT INTO "vehicles" ("name", "colour", "price", "make", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "WagonR"], ["colour", "Blue"], ["price", 500000], ["make", "2018"], ["created_at", "2020-07-27 19:11:27.007273"], ["updated_at", "2020-07-27 19:11:27.007273"]]
+  ↳ app/controllers/vehicles_controller.rb:30
+  [1m[35m (172.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/vehicles_controller.rb:30
+Redirected to http://localhost:3000/vehicles/5
+Completed 302 Found in 185ms (ActiveRecord: 173.5ms)
+
+
+Started GET "/vehicles/5" for ::1 at 2020-07-28 00:41:27 +0530
+Processing by VehiclesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" WHERE "vehicles"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/vehicles_controller.rb:67
+  Rendering vehicles/show.html.erb within layouts/application
+  Rendered vehicles/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 63ms (Views: 59.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/vehicles" for ::1 at 2020-07-28 00:41:29 +0530
+Processing by VehiclesController#index as HTML
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 72ms (Views: 68.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/vehicles" for ::1 at 2020-07-28 00:43:44 +0530
+Processing by VehiclesController#index as HTML
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.8ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 107ms (Views: 89.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/vehicles?search=on" for ::1 at 2020-07-28 00:44:05 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"search"=>"on"}
+Unpermitted parameter: :search
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.4ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 68ms (Views: 64.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/vehicles?search=on" for ::1 at 2020-07-28 00:44:09 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"search"=>"on"}
+Unpermitted parameter: :search
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 70ms (Views: 65.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/vehicles?search=on" for ::1 at 2020-07-28 00:44:35 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"search"=>"on"}
+Unpermitted parameter: :search
+  [1m[36mVehicle Load (0.5ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/queries/vehicle_query.rb:22
+  [1m[36mCACHE Vehicle Load (0.0ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/queries/vehicle_query.rb:22
+  [1m[36mCACHE Vehicle Load (0.0ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/queries/vehicle_query.rb:22
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.2ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 94522ms (Views: 25.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/vehicles?search=on" for ::1 at 2020-07-28 00:46:12 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"search"=>"on"}
+Unpermitted parameter: :search
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.5ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (26.9ms)
+Completed 200 OK in 3288ms (Views: 75.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/vehicles?search=on" for ::1 at 2020-07-28 00:46:35 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"search"=>"on"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.6ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles" WHERE (name ILIKE '%'on'%')[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 2616ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: near "ILIKE": syntax error: SELECT "vehicles".* FROM "vehicles" WHERE (name ILIKE '%'on'%')):
+    14:   </thead>
+    15: 
+    16:   <tbody>
+    17:     <% @vehicles.each do |vehicle| %>
+    18:       <tr>
+    19:         <td><%= vehicle.name %></td>
+    20:         <td><%= vehicle.colour %></td>
+  
+app/views/vehicles/index.html.erb:17:in `_app_views_vehicles_index_html_erb__2234449884336284905_26320'
+Started GET "/vehicles?search=on" for ::1 at 2020-07-28 00:47:43 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"search"=>"on"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.5ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles" WHERE (name LIKE '%on%')[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 3004ms (Views: 81.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/vehicles?search=no" for ::1 at 2020-07-28 00:47:52 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"search"=>"no"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.6ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles" WHERE (name LIKE '%no%')[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 3582ms (Views: 64.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/vehicles?search=no" for ::1 at 2020-07-28 00:49:51 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"search"=>"no"}
+  [1m[36mVehicle Load (0.6ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/muhammed/.rvm/gems/ruby-2.7.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Vehicle Load (0.0ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/muhammed/.rvm/gems/ruby-2.7.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 7189ms (ActiveRecord: 0.0ms)
+
+
+  
+  [1m[36mCACHE Vehicle Load (0.0ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/muhammed/.rvm/gems/ruby-2.7.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+NameError (undefined local variable or method `from_price' for #<VehicleQuery:0x00007fa2c1221440>):
+  
+app/queries/vehicle_query.rb:25:in `filter_by_price'
+app/queries/vehicle_query.rb:10:in `call'
+app/controllers/vehicles_controller.rb:8:in `index'
+Started GET "/vehicles?search=no" for ::1 at 2020-07-28 00:50:23 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"search"=>"no"}
+  [1m[36mVehicle Load (0.2ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/muhammed/.rvm/gems/ruby-2.7.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Vehicle Load (0.0ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/muhammed/.rvm/gems/ruby-2.7.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+  [1m[36mCACHE Vehicle Load (0.0ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/muhammed/.rvm/gems/ruby-2.7.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+NameError (undefined local variable or method `from_price' for #<VehicleQuery:0x00007fa2c1da13b0>):
+  
+app/queries/vehicle_query.rb:25:in `filter_by_price'
+app/queries/vehicle_query.rb:10:in `call'
+app/controllers/vehicles_controller.rb:7:in `index'
+Started GET "/vehicles?search=no" for ::1 at 2020-07-28 00:50:30 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"search"=>"no"}
+  [1m[36mVehicle Load (0.5ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/muhammed/.rvm/gems/ruby-2.7.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Vehicle Load (0.0ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/muhammed/.rvm/gems/ruby-2.7.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 0.0ms)
+
+
+  
+  [1m[36mCACHE Vehicle Load (0.1ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/muhammed/.rvm/gems/ruby-2.7.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+NameError (undefined local variable or method `from_price' for #<VehicleQuery:0x00007fa2dc7eb7c0>):
+  
+app/queries/vehicle_query.rb:25:in `filter_by_price'
+app/queries/vehicle_query.rb:10:in `call'
+app/controllers/vehicles_controller.rb:7:in `index'
+Started GET "/vehicles" for ::1 at 2020-07-28 00:50:40 +0530
+Processing by VehiclesController#index as HTML
+  [1m[36mVehicle Load (0.4ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/muhammed/.rvm/gems/ruby-2.7.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Vehicle Load (0.1ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/muhammed/.rvm/gems/ruby-2.7.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+
+  
+  [1m[36mCACHE Vehicle Load (0.0ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/muhammed/.rvm/gems/ruby-2.7.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+NameError (undefined local variable or method `from_price' for #<VehicleQuery:0x00007fa2c0ee9480>):
+  
+app/queries/vehicle_query.rb:25:in `filter_by_price'
+app/queries/vehicle_query.rb:10:in `call'
+app/controllers/vehicles_controller.rb:7:in `index'
+Started GET "/vehicles" for ::1 at 2020-07-28 00:53:05 +0530
+Processing by VehiclesController#index as HTML
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.5ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (32.8ms)
+Completed 200 OK in 84ms (Views: 67.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/vehicles?from_price=%2030000" for ::1 at 2020-07-28 00:53:17 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"from_price"=>" 30000"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.6ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 113ms (Views: 106.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/vehicles?from_price=%2030000" for ::1 at 2020-07-28 00:53:33 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"from_price"=>" 30000"}
+Started GET "/vehicles?from_price=2030000" for ::1 at 2020-07-28 00:53:56 +0530
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.5ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (30.7ms)
+Completed 200 OK in 22798ms (Views: 92.0ms | ActiveRecord: 1.9ms)
+
+
+Processing by VehiclesController#index as HTML
+  Parameters: {"from_price"=>"2030000"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.5ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (33.5ms)
+Completed 200 OK in 1461ms (Views: 88.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/vehicles?from_price=50000" for ::1 at 2020-07-28 00:54:53 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"from_price"=>"50000"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.5ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (27.9ms)
+Completed 200 OK in 104ms (Views: 86.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/vehicles?from_price=50000" for ::1 at 2020-07-28 00:54:58 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"from_price"=>"50000"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.4ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 71ms (Views: 66.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/vehicles?from_price=50000" for ::1 at 2020-07-28 00:55:12 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"from_price"=>"50000"}
+  [1m[36mVehicle Load (0.5ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" WHERE (price > 50000) LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/queries/vehicle_query.rb:26
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "vehicles" WHERE (price > 50000)[0m
+  ↳ (byebug):1
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.4ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 72518ms (Views: 68.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/vehicles?from_price=50000" for ::1 at 2020-07-28 00:56:28 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"from_price"=>"50000"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.5ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles" WHERE (price > 50000)[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (29.7ms)
+Completed 200 OK in 107ms (Views: 90.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/vehicles?from_price=50" for ::1 at 2020-07-28 00:56:34 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"from_price"=>"50"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.6ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles" WHERE (price > 50)[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 82ms (Views: 77.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/vehicles?from_price=5000" for ::1 at 2020-07-28 00:56:39 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"from_price"=>"5000"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.6ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles" WHERE (price > 5000)[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 72ms (Views: 68.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/vehicles?from_price=5000&to_price=80000" for ::1 at 2020-07-28 00:56:59 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"from_price"=>"5000", "to_price"=>"80000"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.5ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles" WHERE (price > 5000) AND (price < 80000)[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 74ms (Views: 70.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/vehicles?from_price=5000&to_price=800000" for ::1 at 2020-07-28 00:57:05 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"from_price"=>"5000", "to_price"=>"800000"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.5ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles" WHERE (price > 5000) AND (price < 800000)[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 70ms (Views: 66.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/vehicles?from_price=5000&to_price=40000" for ::1 at 2020-07-28 00:57:16 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"from_price"=>"5000", "to_price"=>"40000"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.6ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles" WHERE (price > 5000) AND (price < 40000)[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 71ms (Views: 67.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/vehicles?from_price=5000&to_price=400000" for ::1 at 2020-07-28 00:57:20 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"from_price"=>"5000", "to_price"=>"400000"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.7ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles" WHERE (price > 5000) AND (price < 400000)[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 75ms (Views: 70.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/vehicles?from_price=5000&to_price=400000" for ::1 at 2020-07-28 00:58:57 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"from_price"=>"5000", "to_price"=>"400000"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.5ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles" WHERE (price > 5000)[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (29.2ms)
+Completed 200 OK in 99ms (Views: 83.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/vehicles?from_price=5000&to_price=40" for ::1 at 2020-07-28 00:59:04 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"from_price"=>"5000", "to_price"=>"40"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.5ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles" WHERE (price > 5000)[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 76ms (Views: 70.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/vehicles?from_price" for ::1 at 2020-07-28 00:59:11 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"from_price"=>nil}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.7ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 78ms (Views: 73.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/vehicles?from_price=40000" for ::1 at 2020-07-28 00:59:24 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"from_price"=>"40000"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.7ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles" WHERE (price > 40000)[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 72ms (Views: 68.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/vehicles?from_price=40000&to_price=400000" for ::1 at 2020-07-28 01:00:07 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"from_price"=>"40000", "to_price"=>"400000"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.4ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles" WHERE (price > 40000)[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 81ms (Views: 63.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/vehicles?from_price=40000&to_price=40000" for ::1 at 2020-07-28 01:00:16 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"from_price"=>"40000", "to_price"=>"40000"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.6ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles" WHERE (price > 40000)[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 74ms (Views: 69.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/vehicles?from_price=40000&to_price=40000" for ::1 at 2020-07-28 01:00:31 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"from_price"=>"40000", "to_price"=>"40000"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.4ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles" WHERE (price > 40000) AND (price < 40000)[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 81ms (Views: 64.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/vehicles?from_price=40000&to_price=400000" for ::1 at 2020-07-28 01:00:36 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"from_price"=>"40000", "to_price"=>"400000"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.5ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles" WHERE (price > 40000) AND (price < 400000)[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (31.6ms)
+Completed 200 OK in 98ms (Views: 91.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/vehicles?from_price=40000&to_price=4000000" for ::1 at 2020-07-28 01:00:40 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"from_price"=>"40000", "to_price"=>"4000000"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.5ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles" WHERE (price > 40000) AND (price < 4000000)[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 71ms (Views: 67.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/vehicles?to_price=4000000" for ::1 at 2020-07-28 01:01:35 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"to_price"=>"4000000"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.5ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles" WHERE (price < 4000000)[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (28.7ms)
+Completed 200 OK in 102ms (Views: 85.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/vehicles?to_price=4000" for ::1 at 2020-07-28 01:01:40 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"to_price"=>"4000"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.6ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles" WHERE (price < 4000)[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 70ms (Views: 66.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/vehicles?to_price=40000" for ::1 at 2020-07-28 01:01:43 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"to_price"=>"40000"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.5ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles" WHERE (price < 40000)[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 72ms (Views: 68.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/vehicles" for ::1 at 2020-07-28 01:05:13 +0530
+Processing by VehiclesController#index as HTML
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.5ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 78ms (Views: 59.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/vehicles?colour" for ::1 at 2020-07-28 01:05:17 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"colour"=>nil}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.4ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 71ms (Views: 67.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/vehicles?colour=red" for ::1 at 2020-07-28 01:05:23 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"colour"=>"red"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 72ms (Views: 67.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/vehicles?colour=Red" for ::1 at 2020-07-28 01:05:29 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"colour"=>"Red"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 72ms (Views: 68.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/vehicles?colour=Red" for ::1 at 2020-07-28 01:06:03 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"colour"=>"Red"}
+  [1m[36mVehicle Load (0.8ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/queries/vehicle_query.rb:38
+  [1m[36mCACHE Vehicle Load (0.0ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/queries/vehicle_query.rb:38
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.4ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 35753ms (Views: 74.8ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/vehicles?colour=Red" for ::1 at 2020-07-28 01:06:41 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"colour"=>"Red"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.7ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles" WHERE "vehicles"."colour" = ?[0m  [["colour", "Red"]]
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 98ms (Views: 76.3ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/vehicles?colour=blue" for ::1 at 2020-07-28 01:06:48 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"colour"=>"blue"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles" WHERE "vehicles"."colour" = ?[0m  [["colour", "blue"]]
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 68ms (Views: 64.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/vehicles?colour=blue" for ::1 at 2020-07-28 01:07:50 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"colour"=>"blue"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.5ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles" WHERE (LOWER(colour) = 'blue' )[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (27.1ms)
+Completed 200 OK in 99ms (Views: 82.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/vehicles" for ::1 at 2020-07-28 01:24:12 +0530
+Processing by VehiclesController#index as HTML
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.6ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (29.2ms)
+Completed 200 OK in 102ms (Views: 83.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/vehicles?sort_on=colour" for ::1 at 2020-07-28 01:24:31 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"sort_on"=>"colour"}
+Unpermitted parameter: :sort_on
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 69ms (Views: 64.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/vehicles?sort_on=colour" for ::1 at 2020-07-28 01:24:35 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"sort_on"=>"colour"}
+Unpermitted parameter: :sort_on
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.4ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 70ms (Views: 67.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/vehicles?sort_on=colour" for ::1 at 2020-07-28 01:25:47 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"sort_on"=>"colour"}
+Unpermitted parameter: :sort_on
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.4ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 94ms (Views: 77.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/vehicles?sort_on=colour" for ::1 at 2020-07-28 01:25:50 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"sort_on"=>"colour"}
+Unpermitted parameter: :sort_on
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 72ms (Views: 67.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/vehicles?sort_on=colour" for ::1 at 2020-07-28 01:26:10 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"sort_on"=>"colour"}
+Unpermitted parameter: :sort_on
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.2ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 44ms (Views: 34.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/vehicles?sort_on=colour" for ::1 at 2020-07-28 01:26:14 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"sort_on"=>"colour"}
+Unpermitted parameter: :sort_on
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 92ms (Views: 80.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/vehicles?sort_on=colour" for ::1 at 2020-07-28 01:26:26 +0530
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/muhammed/.rvm/gems/ruby-2.7.1/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by VehiclesController#index as HTML
+  Parameters: {"sort_on"=>"colour"}
+Unpermitted parameter: :sort_on
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.6ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (29.8ms)
+Completed 200 OK in 12584ms (Views: 348.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/vehicles?sort_on=colour" for ::1 at 2020-07-28 01:27:28 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"sort_on"=>"colour"}
+Completed 500 Internal Server Error in 4373ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (Direction "colour" is invalid. Valid directions are: [:asc, :desc, :ASC, :DESC, "asc", "desc", "ASC", "DESC"]):
+  
+app/queries/vehicle_query.rb:48:in `sort'
+app/queries/vehicle_query.rb:13:in `call'
+app/controllers/vehicles_controller.rb:7:in `index'
+Started GET "/vehicles?sort_on=colour" for ::1 at 2020-07-28 01:28:27 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"sort_on"=>"colour"}
+  [1m[36mVehicle Load (0.6ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" ORDER BY "" DESC LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/queries/vehicle_query.rb:48
+Completed 500 Internal Server Error in 188516ms (ActiveRecord: 2.4ms)
+
+
+  
+ArgumentError (Direction "colour" is invalid. Valid directions are: [:asc, :desc, :ASC, :DESC, "asc", "desc", "ASC", "DESC"]):
+  
+app/queries/vehicle_query.rb:48:in `sort'
+app/queries/vehicle_query.rb:13:in `call'
+app/controllers/vehicles_controller.rb:7:in `index'
+Started GET "/vehicles?sort_on=colour" for ::1 at 2020-07-28 01:31:36 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"sort_on"=>"colour"}
+Completed 500 Internal Server Error in 1408ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (Direction "colour" is invalid. Valid directions are: [:asc, :desc, :ASC, :DESC, "asc", "desc", "ASC", "DESC"]):
+  
+app/queries/vehicle_query.rb:48:in `sort'
+app/queries/vehicle_query.rb:13:in `call'
+app/controllers/vehicles_controller.rb:7:in `index'
+Started GET "/vehicles?sort_on=colour" for ::1 at 2020-07-28 01:31:53 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"sort_on"=>"colour"}
+Completed 500 Internal Server Error in 2324ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (Direction "" is invalid. Valid directions are: [:asc, :desc, :ASC, :DESC, "asc", "desc", "ASC", "DESC"]):
+  
+app/queries/vehicle_query.rb:47:in `sort'
+app/queries/vehicle_query.rb:13:in `call'
+app/controllers/vehicles_controller.rb:7:in `index'
+Started GET "/vehicles?sort_on=colour" for ::1 at 2020-07-28 01:32:24 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"sort_on"=>"colour"}
+  [1m[36mVehicle Load (0.5ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/queries/vehicle_query.rb:48
+  [1m[36mCACHE Vehicle Load (0.0ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/queries/vehicle_query.rb:48
+Completed 500 Internal Server Error in 123572ms (ActiveRecord: 3.1ms)
+
+
+  
+ArgumentError (Direction "" is invalid. Valid directions are: [:asc, :desc, :ASC, :DESC, "asc", "desc", "ASC", "DESC"]):
+  
+app/queries/vehicle_query.rb:48:in `sort'
+app/queries/vehicle_query.rb:13:in `call'
+app/controllers/vehicles_controller.rb:7:in `index'
+Started GET "/vehicles?sort_on=colour" for ::1 at 2020-07-28 01:34:27 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"sort_on"=>"colour"}
+Completed 500 Internal Server Error in 1824ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (Direction "" is invalid. Valid directions are: [:asc, :desc, :ASC, :DESC, "asc", "desc", "ASC", "DESC"]):
+  
+app/queries/vehicle_query.rb:48:in `sort'
+app/queries/vehicle_query.rb:13:in `call'
+app/controllers/vehicles_controller.rb:7:in `index'
+Started GET "/vehicles?sort_on=colour" for ::1 at 2020-07-28 01:34:35 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"sort_on"=>"colour"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.5ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles" ORDER BY "vehicles"."colour" DESC[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (24.6ms)
+Completed 200 OK in 105ms (Views: 84.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/vehicles?sort_on=colour" for ::1 at 2020-07-28 01:34:41 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"sort_on"=>"colour"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.4ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles" ORDER BY "vehicles"."colour" DESC[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 78ms (Views: 73.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/vehicles?sort_on=colour&sort_by=asc" for ::1 at 2020-07-28 01:35:02 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"sort_on"=>"colour", "sort_by"=>"asc"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.6ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles" ORDER BY "vehicles"."colour" ASC[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 69ms (Views: 65.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/vehicles?sort_on=coslour&sort_by=asc" for ::1 at 2020-07-28 01:35:15 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"sort_on"=>"coslour", "sort_by"=>"asc"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.4ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles" ORDER BY "coslour" ASC[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 69ms (Views: 66.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/vehicles?sort_on=coslssssour&sort_by=asc" for ::1 at 2020-07-28 01:35:20 +0530
+Processing by VehiclesController#index as HTML
+  Parameters: {"sort_on"=>"coslssssour", "sort_by"=>"asc"}
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.6ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles" ORDER BY "coslssssour" ASC[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 71ms (Views: 67.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/vehicles" for ::1 at 2020-07-28 01:56:34 +0530
+Processing by VehiclesController#index as HTML
+  Rendering vehicles/index.html.erb within layouts/application
+  Rendered vehicles/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 108ms (Views: 85.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vehicles" for ::1 at 2020-07-28 01:56:36 +0530
+Processing by VehiclesController#index as HTML
+  Rendering vehicles/index.html.erb within layouts/application
+  Rendered vehicles/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 64ms (Views: 60.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vehicles" for ::1 at 2020-07-28 01:57:02 +0530
+Processing by VehiclesController#index as HTML
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.4ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+  ↳ app/views/vehicles/index.html.erb:17
+  Rendered vehicles/index.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 94ms (Views: 85.1ms | ActiveRecord: 2.0ms)
+
+
